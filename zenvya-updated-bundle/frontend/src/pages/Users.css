@@ -1,0 +1,887 @@
+/* =========================================================
+   ZENVYRA - USERS MODULE
+   ========================================================= */
+
+.users-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* ---------------------------------------------------------
+   Page Header
+   --------------------------------------------------------- */
+
+.users-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.users-page-header h1 {
+  margin: 6px 0 8px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #182230;
+}
+
+.users-page-header p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.users-page-header .primary-button {
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   Alerts
+   --------------------------------------------------------- */
+
+.users-alert {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.users-alert-success {
+  color: #027a48;
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+}
+
+.users-alert-error {
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+/* ---------------------------------------------------------
+   Cards
+   --------------------------------------------------------- */
+
+.users-form-card,
+.users-list-card {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
+}
+
+/* ---------------------------------------------------------
+   Section Header
+   --------------------------------------------------------- */
+
+.users-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.users-section-header h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #182230;
+}
+
+.users-section-header p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------
+   Create User Card
+   --------------------------------------------------------- */
+
+.users-form-card {
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.users-form-card > form {
+  padding: 24px;
+}
+
+.users-form-card .users-section-header {
+  padding: 22px 24px;
+}
+
+.users-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 20px;
+}
+
+/* ---------------------------------------------------------
+   Form Fields
+   --------------------------------------------------------- */
+
+.users-page .form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 7px;
+}
+
+.users-page .form-field label {
+  display: block;
+  margin: 0;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.users-page .form-field label span {
+  color: #f04438;
+}
+
+.users-page .form-field input {
+  display: block;
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #101828;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.users-page .form-field input::placeholder {
+  color: #98a2b3;
+}
+
+.users-page .form-field input:hover {
+  border-color: #98a2b3;
+}
+
+.users-page .form-field input:focus {
+  border-color: #7f56d9;
+  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.12);
+}
+
+/* ---------------------------------------------------------
+   Form Footer
+   --------------------------------------------------------- */
+
+.users-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-top: 26px;
+  padding-top: 20px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+.users-role-note {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  color: #344054;
+  font-size: 13px;
+}
+
+.users-role-note strong {
+  font-weight: 700;
+}
+
+.users-role-note span {
+  color: #667085;
+  font-size: 12px;
+}
+
+.users-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+.users-page .secondary-button {
+  min-height: 40px;
+  padding: 0 15px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #344054;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.users-page .secondary-button:hover {
+  background: #f9fafb;
+}
+
+.users-page .secondary-button:disabled,
+.users-page .primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------
+   Loading
+   --------------------------------------------------------- */
+
+.users-loading {
+  padding: 60px 24px;
+  text-align: center;
+
+  color: #667085;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------------
+   Empty State
+   --------------------------------------------------------- */
+
+.users-empty {
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.users-empty-icon {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f4f3ff;
+  color: #6941c6;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.users-empty h3 {
+  margin: 0 0 7px;
+
+  color: #182230;
+  font-size: 17px;
+}
+
+.users-empty p {
+  margin: 0 0 20px;
+
+  color: #667085;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------
+   Users Table
+   --------------------------------------------------------- */
+
+.users-list-card {
+  overflow: hidden;
+}
+
+.users-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.users-table th {
+  padding: 13px 20px;
+
+  background: #f9fafb;
+  border-bottom: 1px solid #eaecf0;
+
+  color: #667085;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.users-table td {
+  padding: 15px 20px;
+
+  border-bottom: 1px solid #f2f4f7;
+
+  color: #475467;
+
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.users-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #fcfcfd;
+}
+
+/* ---------------------------------------------------------
+   User Name
+   --------------------------------------------------------- */
+
+.users-page .user-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 190px;
+}
+
+.users-page .user-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f4f3ff;
+  color: #6941c6;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.users-page .user-name-cell > div:last-child {
+  min-width: 0;
+}
+
+.users-page .user-name-cell strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #182230;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.users-page .user-name-cell small {
+  display: block;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #98a2b3;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+   Badges
+   --------------------------------------------------------- */
+
+.users-page .user-role-badge,
+.users-page .user-status-badge {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 25px;
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.users-page .user-role-badge {
+  background: #f4f3ff;
+  color: #6941c6;
+}
+
+.users-page .user-status-active {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.users-page .user-status-disabled {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.users-page .user-status-pending {
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.users-page .user-status-rejected {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .users-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .users-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .users-page-header .primary-button {
+    width: auto;
+  }
+
+  .users-form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .users-form-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .users-page {
+    padding-bottom: 24px;
+  }
+
+  .users-page-header h1 {
+    font-size: 26px;
+  }
+
+  .users-form-card > form {
+    padding: 18px;
+  }
+
+  .users-section-header {
+    padding: 18px;
+  }
+
+  .users-form-actions {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .users-form-actions button {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+   User Actions
+   --------------------------------------------------------- */
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 270px;
+}
+
+.user-action-button {
+  min-height: 32px;
+  padding: 0 9px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #344054;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.user-action-button:hover {
+  background: #f9fafb;
+  border-color: #98a2b3;
+}
+
+.user-action-danger {
+  color: #b42318;
+}
+
+.user-action-danger:hover {
+  background: #fef3f2;
+  border-color: #fecdca;
+}
+
+.user-action-success {
+  color: #027a48;
+}
+
+.user-action-success:hover {
+  background: #ecfdf3;
+  border-color: #abefc6;
+}
+
+/* ---------------------------------------------------------
+   Modal
+   --------------------------------------------------------- */
+
+.users-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(16, 24, 40, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.users-modal {
+  width: 100%;
+  max-width: 620px;
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  box-shadow:
+    0 24px 48px rgba(16, 24, 40, 0.18),
+    0 8px 16px rgba(16, 24, 40, 0.08);
+}
+
+.users-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.users-modal-header h2 {
+  margin: 0 0 5px;
+
+  color: #182230;
+  font-size: 18px;
+}
+
+.users-modal-header p {
+  margin: 0;
+
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.users-modal-close {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #667085;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.users-modal-close:hover {
+  background: #f2f4f7;
+  color: #344054;
+}
+
+.users-modal-body {
+  padding: 24px;
+}
+
+.users-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 18px 24px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+/* ---------------------------------------------------------
+   Read-only User Information
+   --------------------------------------------------------- */
+
+.users-readonly-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+
+  margin-top: 22px;
+  padding-top: 20px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+.users-readonly-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #eaecf0;
+  border-radius: 9px;
+
+  background: #f9fafb;
+}
+
+.users-readonly-info span {
+  color: #667085;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.users-readonly-info strong {
+  color: #344054;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------
+   Confirmation Modal
+   --------------------------------------------------------- */
+
+.users-confirm-modal {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  box-shadow:
+    0 24px 48px rgba(16, 24, 40, 0.18),
+    0 8px 16px rgba(16, 24, 40, 0.08);
+}
+
+.users-confirm-icon {
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fffaeb;
+  color: #b54708;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.users-confirm-modal h2 {
+  margin: 0 0 8px;
+
+  color: #182230;
+  font-size: 19px;
+}
+
+.users-confirm-modal p {
+  margin: 0 auto;
+
+  max-width: 360px;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.users-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.users-confirm-actions .danger-button {
+  min-height: 40px;
+  padding: 0 15px;
+
+  border: 1px solid #ef4444;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #dc2626;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.users-confirm-actions .danger-button:hover {
+  background: #fef2f2;
+}
+
+/* ---------------------------------------------------------
+   Password Security Note
+   --------------------------------------------------------- */
+
+.users-password-note {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 20px;
+  padding: 13px 14px;
+
+  border: 1px solid #fedf89;
+  border-radius: 9px;
+
+  background: #fffaeb;
+}
+
+.users-password-note strong {
+  color: #b54708;
+  font-size: 12px;
+}
+
+.users-password-note span {
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   Modal Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .users-modal-overlay {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .users-modal {
+    max-height: calc(100vh - 32px);
+  }
+
+  .users-modal-header,
+  .users-modal-body {
+    padding: 18px;
+  }
+
+  .users-modal-footer {
+    padding: 16px 18px;
+  }
+
+  .users-readonly-info {
+    grid-template-columns: 1fr;
+  }
+
+  .users-confirm-modal {
+    padding: 24px 20px;
+  }
+}

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: zenvyra-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/zenvyra_user
+    username: root
+    password: Mahi@1997
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8081
+
+jwt:
+  secret: ZenvyraLocalDevelopmentSecretKey2026VeryLongRandomValue123456
+internal:
+  service:
+    api-key: ZenvyraInternalLocalKey2026
+
+
+organization-service:
+  base-url: http://localhost:8082

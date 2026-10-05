@@ -1,0 +1,36 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: ZENVYRA-INVOICE-SERVICE
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/zenvya_invoice
+    username: root
+    password: Mahi@1997
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+jwt:
+  secret: ZenvyraLocalDevelopmentSecretKey2026VeryLongRandomValue123456
+
+zenvya:
+  services:
+    organization-url: http://localhost:8082
+    customer-url: http://localhost:8083
+    product-url: http://localhost:8084

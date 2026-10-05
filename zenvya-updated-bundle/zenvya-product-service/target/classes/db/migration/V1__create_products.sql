@@ -1,0 +1,21 @@
+CREATE TABLE products (
+ id BINARY(16) NOT NULL,
+ organization_id BINARY(16) NOT NULL,
+ product_code VARCHAR(50) NOT NULL,
+ name VARCHAR(200) NOT NULL,
+ description VARCHAR(1000),
+ category VARCHAR(150),
+ unit VARCHAR(30) NOT NULL,
+ selling_price DECIMAL(15,2) NOT NULL,
+ tax_rate DECIMAL(5,2) NOT NULL DEFAULT 0,
+ status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+ created_at DATETIME(6) NOT NULL,
+ updated_at DATETIME(6) NOT NULL,
+ PRIMARY KEY (id),
+ CONSTRAINT uk_products_org_code UNIQUE (organization_id, product_code),
+ CONSTRAINT chk_products_status CHECK (status IN ('ACTIVE','DISABLED')),
+ CONSTRAINT chk_products_selling_price CHECK (selling_price >= 0),
+ CONSTRAINT chk_products_tax_rate CHECK (tax_rate >= 0 AND tax_rate <= 100),
+ INDEX ix_products_organization_id (organization_id),
+ INDEX ix_products_name (organization_id,name)
+);
